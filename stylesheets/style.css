@@ -16,14 +16,28 @@ body {
   color: #FFFFFF;
 }
 
-.sidebar-menu a:hover {
+a {
   text-decoration: none;
-  background-color: black;
+}
+a:hover {
+  cursor: pointer;
 }
 
-.button a:hover {
-  text-decoration: none;
-  background-color: #df1f1f;
+ul {
+  padding-left: 0;
+  margin-left: 0;
+  list-style-type: none;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
 }
 
 .l-flex {
@@ -38,6 +52,19 @@ body {
   flex-wrap: wrap;
 }
 
+.l-sidebar {
+  min-width: 188px;
+}
+
+.l-header {
+  display: flex;
+  align-items: center;
+}
+
+.l-section {
+  margin: 32px 0;
+}
+
 .badge {
   background: #ffdd40;
   border-radius: 4px;
@@ -50,9 +77,14 @@ body {
 
 .button {
   display: inline-block;
+  border: 3px solid #aaaebc;
   border-radius: 4px;
-  padding: 0px 0px;
+  padding: 8px 16px;
   text-align: center;
+}
+.button:hover {
+  opacity: 0.4;
+  cursor: pointer;
 }
 
 .header-buttons {
@@ -74,21 +106,6 @@ body {
 .button-secondary {
   border: 0;
   background: #444857;
-}
-
-.card-footer .button-secondary {
-  border: 0;
-  background: #444857;
-  padding: 5px 15px;
-}
-
-.button-outline {
-  display: inline-block;
-  border: 3px solid #aaaebc;
-  border-radius: 4px;
-  padding: 0px 0px;
-  text-align: center;
-  padding: 5px 10px;
 }
 
 .card-icon {
@@ -142,7 +159,7 @@ body {
 }
 
 .product-message-body {
-  color: #B7BBBD;
+  color: #b7bbc8;
   margin-bottom: 16px;
 }
 
@@ -150,6 +167,11 @@ body {
   border-radius: 4px;
   background: #2c303a;
   transition: 0.2s;
+}
+.product-item-card:hover {
+  transform: scale(1.05);
+  opacity: 0.4;
+  cursor: pointer;
 }
 
 .product-item-card-image {
@@ -216,6 +238,11 @@ body {
   left: 160px;
   bottom: 20px;
 }
+@media (max-width: 576px) {
+  .code-card-html {
+    left: 120px;
+  }
+}
 
 .code-card {
   margin-bottom: 8px;
@@ -265,14 +292,15 @@ body {
   left: 220px;
   bottom: 20px;
 }
+@media (max-width: 576px) {
+  .code-card-scss {
+    left: 160px;
+  }
+}
 
 .code-card-title-text {
   margin: 0;
   margin-left: 8px;
-}
-
-.cursor {
-  animation: blink 1s infinite;
 }
 
 .code-card-body .l-margin-left-2rem {
@@ -288,7 +316,30 @@ body {
   left: 160px;
   bottom: 20px;
 }
+@media (max-width: 576px) {
+  .code-card-js {
+    left: 120px;
+  }
+}
 
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .features {
   justify-content: center;
 }
@@ -317,10 +368,6 @@ body {
   font-size: 2rem;
 }
 
-.l-section {
-  margin: 32px 0;
-}
-
 .hero {
   margin: 32px;
 }
@@ -333,6 +380,11 @@ body {
 .hero-body-description {
   width: 50%;
   padding: 32px;
+}
+@media (max-width: 576px) {
+  .hero-body-description {
+    width: 100%;
+  }
 }
 
 .hero-logo {
@@ -362,6 +414,11 @@ body {
 .hero-body-image {
   width: 50%;
 }
+@media (max-width: 576px) {
+  .hero-body-image {
+    width: 100%;
+  }
+}
 
 .hero-body-image-card {
   margin: 16px auto;
@@ -370,10 +427,10 @@ body {
   height: 410px;
   background: linear-gradient(109.61deg, #4c4f5a 4.26%, #202125 84.84%);
 }
-
-.l-header {
-  display: flex;
-  align-items: center;
+@media (max-width: 576px) {
+  .hero-body-image-card {
+    width: 100%;
+  }
 }
 
 .fa cube {
@@ -416,24 +473,14 @@ body {
 .sidebar {
   background: #1F1F26;
 }
-
-.l-sidebar {
-  min-width: 188px;
+@media (max-width: 576px) {
+  .sidebar {
+    display: none;
+  }
 }
 
 .codepen-logo {
   text-align: center;
-}
-
-h2 {
-  display: block;
-  font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-  unicode-bidi: isolate;
 }
 
 .get-start-text {
@@ -457,6 +504,10 @@ h2 {
   padding: 8px;
   width: 100%;
 }
+.button-logo-text:hover {
+  background-color: black;
+  cursor: pointer;
+}
 
 .sidebar-menu-sub-list {
   margin-bottom: 16px;
@@ -472,11 +523,9 @@ h2 {
   display: block;
   padding-left: 16px;
 }
-
-ul {
-  padding-left: 0;
-  margin-left: 0;
-  list-style-type: none;
+.sidebar-menu a:hover {
+  background-color: black;
+  cursor: pointer;
 }
 
 .text-warning {

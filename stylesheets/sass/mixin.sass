@@ -1,0 +1,23 @@
+@use 'variable' as v
+
+
+@mixin sm 
+    @media (max-width: #{v.$screen-sm-min}) 
+        @content
+    
+
+
+@mixin md 
+    @media (max-width: #{v.$screen-md-min}) 
+        @content
+    
+
+
+@mixin lg
+    @media (max-width: #{v.$screen-lg-min})
+        @content
+ 
+
+@mixin xl 
+    @media (max-width: #{v.$screen-xl-min}) 
+        @content

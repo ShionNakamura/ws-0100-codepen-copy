@@ -1,24 +1,18 @@
+@use '../variable' as v
+@use '../mixin' as m
+
 .sidebar 
-    background: #1F1F26
-.l-sidebar
-    min-width: 188px
+    background: v.$weak-black
+    @include m.sm
+        display: none
 .codepen-logo
     text-align: center
-h2
-    display: block
-    font-size: 2em
-    margin-block-start: 0.67em
-    margin-block-end: 0.67em
-    margin-inline-start: 0px
-    margin-inline-end: 0px
-    font-weight: bold
-    unicode-bidi: isolate
 
 .get-start-text
     margin:0.2em
     font-size: 10px
     text-align: center
-    color:#b7bbc8
+    color: v.$lightgray
 
 .button-logo
   margin: 0 16px
@@ -29,11 +23,13 @@ h2
 
 .button-logo-text
   display: block
-  background: black
+  background: v.$black
   padding: 8px
   width:100%
+  &:hover
+    background-color: v.$black
+    cursor: pointer
 
-  
 .sidebar-menu-sub-list
  margin-bottom: 16px
 .sidebar-menu-title 
@@ -43,10 +39,9 @@ h2
 .sidebar-menu a 
   display: block
   padding-left:16px
-ul 
- padding-left: 0
- margin-left: 0
- list-style-type: none
+  &:hover
+    background-color: v.$black
+    cursor: pointer
 
 
 
